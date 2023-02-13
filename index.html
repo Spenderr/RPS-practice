@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissor</title>
+  <link rel="stylesheet"href="style.css">
+</head>
+    
+<body>
+    <div id="headerBar">    
+        <h1>Welcome to rock paper scissor</h1>
+    </div>  
+    <div class="topTitle">
+        
+      
+    </div>
+    <h2 id="playerScore">Your Score : 0</h2>
+    <h2 id="computerScore">Computer Score : 0</h2>
+    <h2 id="resultBox"> </h2>
+    <div class="selectionBox">
+        <span>Your Choice<img id="playerChoice"></span>
+        <span>Computer Choice<img id="computerChoice"></span>
+    </div>
+    
+    <h2 id="firstHeader" style="text-align: center">Make your choice</h2>
+    <div class="selections">
+        <button class="choiceBtn" id="RockButton"><img src="rock.png" >rock</button>
+        <button class="choiceBtn" id="PaperButton"><img src="paper.png" >paper</button>
+        <button class="choiceBtn" id="ScissorsButton"><img src="scissors.png" >scissors</button>
+    </div>
+    
+    <br><br><br><br>
+    <div class="overlay" id="overlay" style="display: none">
+        <div class="playAgainBox">
+            <!--<div onclick="closePlayAgainBox()" class="close">&#10006;</div>-->
+            <h2 style="font-size: 35px" id="winner"></h2>
+            <p style="font-size: 25px">Would you like to playagain?</p>
+            <div id="ConfBut">
+            <button class="ansBut" onclick="playingAgain(true)">YESSIRRR</button>
+            <button class="ansBut" onclick="playingAgain(false)">NO</button>
+            </div>    
+        </div>
+    </div>
+    
+    <div id="gameOver" class="gameOver" style="display: none">
+        <div id="gameOverText">
+            <h1>GAME OVER</h1>
+        </div>
+    </div>
+    
+    <script src="index.js" defer></script>
+    
+    
+    
+
+
+</body>
+ 
+    
+
+
+
+</html>
