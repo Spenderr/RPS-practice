@@ -1,0 +1,2 @@
+This is just a dummy txt file. Ive done my UI and added them to a branch I used to work on, now will
+merge what I ve made in the branch to the main branch;
