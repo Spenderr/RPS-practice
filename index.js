@@ -1,49 +1,31 @@
-var choiceBtn = document.querySelectorAll('.choiceBtn');
-var playerSBoard = document.getElementById('playerScore');
-var computerSBoard = document.getElementById('computerScore');
+var choiceBtn = document.querySelectorAll('.element');
+var playerSBoard = document.getElementById('userScore');
+var computerSBoard = document.getElementById('compScore');
 var playerScore = 0;
 var computerScore= 0;
 
 let player,plyr;
 let computer,cmpt;
-let result = ' '; 
 
 
 choiceBtn.forEach(button =>  button.addEventListener("click",() =>                                               
 {
     player = button.innerText.toLowerCase();
     computerChoice();
-    //console.log(player);
     playRound(player,computerChoice());
 }))
 
 
 function showPlayAgainBox()
 {
-    document.getElementById("overlay").style.display = "inline-block";
-    
+    document.querySelector('.GO').style.display = "flex";
 }
 
-function showGameOver()
-{
-    document.getElementById("gameOver").style.display="inline-block";
-}
 
-function closePlayAgainBox()
-{
-    document.getElementById("overlay").style.display="none";
-    
-}
 function playingAgain(answer)
 {
     if(answer == true)
         location.reload();
-    else if (answer == false)
-    {
-        console.log("GAME OVER");
-        closePlayAgainBox();
-        showGameOver();
-    }
 }
 
 
@@ -72,25 +54,23 @@ function playRound(plyr,cmpt)
        (plyr == 'scissors' && cmpt=='scissors')
       )
     {
-        result = "Computer Chose " + cmpt+" as well...\nTie round";
-       
+               
     }
     else if((plyr == 'rock' && cmpt == 'scissors')||
            (plyr == 'paper' && cmpt == 'rock')||
            (plyr == 'scissors' && cmpt == 'paper'))
     {
-        result = plyr + " beats "+ cmpt + "\n";
+        
         playerScore++;
         console.log(playerScore);
     }
     else
     {
-        result = cmpt + " beats "+ plyr + "\n You Lose";
+        
         computerScore++;
         console.log(computerScore);
     }
             
-        document.querySelector('#resultBox').innerText = result; 
     
     if(playerScore == 5)
     {
@@ -106,8 +86,8 @@ function playRound(plyr,cmpt)
     showPlayAgainBox();
     }
     
-    playerSBoard.innerText = `Your Score: ${playerScore}`;
-    computerSBoard.innerText = `Computer Score: ${computerScore}`;
+    playerSBoard.innerText = `${playerScore}`;
+    computerSBoard.innerText = `${computerScore}`;
     
     document.getElementById('playerChoice').src = player+".png";
     document.getElementById('computerChoice').src = computer+".png";
